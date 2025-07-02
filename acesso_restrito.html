@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Acesso Restrito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input[type="password"] {
+            padding: 10px;
+            width: 250px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Acesso restrito</h2>
+        <p>Digite a senha para acessar o relatório de filmagem:</p>
+        <input type="password" id="password" placeholder="Senha">
+        <br>
+        <button onclick="checkPassword()">Acessar</button>
+        <p id="error-message" style="color:red; display:none;">Senha incorreta.</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('password').value;
+            if (input === "BR70@2025") {
+                window.location.href = "https://raw.githubusercontent.com/lorenacardoso1811/shooting_day/main/20250620_Day980_Shooting%20Day%20Report.pdf";
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
